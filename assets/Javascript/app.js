@@ -53,13 +53,13 @@ DB.ref().on('child_added', function(snapshot){
     let tFrequency = snapshot.val().frequency;
     // console.log(tFrequency);
     let diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-    console.log("DIFFERENCE IN TIME: " + diffTime);
+    // console.log("DIFFERENCE IN TIME: " + diffTime);
     let tRemainder = diffTime % tFrequency;
-    console.log(tRemainder);
+    // console.log(tRemainder);
     let tMinutesTillTrain = tFrequency - tRemainder;
-    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+    // console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
     let nextTrain = moment().add(tMinutesTillTrain, "minutes");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+    // console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
     const data4 = $('<td>');
     $(data4).text(moment(nextTrain).format("hh:mm"));
     tRow.append(data4);
